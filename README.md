@@ -25,7 +25,7 @@ cd repository
 ```
 #### 运行程序
 ``` shell
-python password.assistance.py
+python password-assistance.py
 ```
 设置对应的密码，重启程序后使用对应F1~F9功能键，便可快速输入密码。密码在本地以pass_config.json形式保存。
 也可以直接在release中下载打包好的.exe程序。

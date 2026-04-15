@@ -1,21 +1,31 @@
 name: Build macOS App
 on: [push]
+
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-latest  # GitHub 会自动分配最新的 macOS 环境
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v4  # 更新到 v4
+
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5  # 更新到 v5
         with:
           python-version: '3.10'
+
       - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install PyQt6 requests keyboard pyinstaller
+
       - name: Build with PyInstaller
-        run: pyinstaller --clean main.spec
+        run: |
+          # 确保你的 main.spec 文件在根目录
+          pyinstaller --clean main.spec
+
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # 关键修复：更新到 v4
         with:
-          name: MacOS-App
+          name: MacOS-App-Build
+          # 注意：v4 要求打包的路径必须存在
           path: dist/快捷密码助手.app

@@ -49,7 +49,7 @@ coll = COLLECT(
 app = BUNDLE(
     coll,
     name='快捷密码助手.app',
-    icon='final_app.ico', # macOS通常使用.icns，但PyInstaller会自动转换部分格式
+    icon='final_app.icns', # macOS通常使用.icns，但PyInstaller会自动转换部分格式
     bundle_identifier='com.jerseyx.passwordassistant',
     info_plist={
         'NSAppleEventsUsageDescription': '需要按键监听权限以实现自动填充功能',

@@ -1,0 +1,21 @@
+name: Build macOS App
+on: [push]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          pip install PyQt6 requests keyboard pyinstaller
+      - name: Build with PyInstaller
+        run: pyinstaller --clean main.spec
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: MacOS-App
+          path: dist/快捷密码助手.app

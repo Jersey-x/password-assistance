@@ -3,7 +3,7 @@
 block_cipher = None
 
 a = Analysis(
-    ['password-assistance.py'],  # 替换为你的文件名
+    ['Q.py'],  # 替换为你的文件名
     pathex=[],
     binaries=[],
     datas=[('final_app.ico', '.')], # 确保图标文件在目录下

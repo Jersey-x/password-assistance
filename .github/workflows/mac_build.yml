@@ -1,6 +1,16 @@
 name: Build macOS App
 on: [push]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
 jobs:
   build:
     runs-on: macos-latest  # GitHub 会自动分配最新的 macOS 环境

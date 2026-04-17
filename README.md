@@ -14,14 +14,10 @@
 ```shell git clone https://github.com/Jersey-x/password-assistance.git
 git clone https://github.com/Jersey-x/password-assistance.git 
 ````
-#### 进入目录
-```shell
-cd repository
-```
 
 #### 安装依赖库
 ```shell
- git pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 #### 运行程序
 ``` shell
